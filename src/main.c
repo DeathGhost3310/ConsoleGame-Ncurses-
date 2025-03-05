@@ -10,12 +10,12 @@
 #include "../include/object.h"
 #include "../include/playerObj.h"
 #include "../include/objectMap.h"
+#include "../include/interface.h"
+
 
 int main(){
    init_render();
-   Object *obj = init_player(init_Vector2i(10, 10));
    Object *player = init_player(init_Vector2i(15, 15));
-   Object *pl = init_player(init_Vector2i(40, 25));
    Object *obb = init_object(1, "wall");
    Object *obb2 = init_object(1, "wall2");
    Transform *transfWall2 = init_transform(init_Vector2i(33, 33), ')');
@@ -25,9 +25,7 @@ int main(){
    addComp_object(obb, (Component *)transfWall);
    addComp_object(obb2, (Component *)transfWall2);
    init_objectMap(1000);
-   add_object(obj);
    add_object(player);
-   add_object(pl);
    add_object(obb);
    add_object(obb2);
 
@@ -41,9 +39,11 @@ int main(){
           
       cls();
       border_draw(130, 35, '|');
+      update_interface();
       update_objects();
    }
-   
+
+   destruct_interface();
    destruct_objMap();  
    destruct_render();
    return 0;

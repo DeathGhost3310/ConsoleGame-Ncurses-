@@ -1,4 +1,5 @@
 #include "../include/render.h"
+#include <stdlib.h>
 
 void init_render(){
    initscr();
@@ -6,6 +7,10 @@ void init_render(){
    noecho();
    keypad(stdscr, TRUE);
    curs_set(0);
+}
+
+void print_text(char* text, Vector2i pos){
+   mvprintw(pos.y, pos.x, "%s\n", text);
 }
 
 void draw(Vector2i pos, char sym){

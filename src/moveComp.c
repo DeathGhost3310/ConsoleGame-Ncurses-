@@ -25,22 +25,22 @@ void update_move(void *self){
    Vector2i checkpos = transf->pos;
    if(key == 'w'){
       checkpos.y -= 1;
-      if(check_pos(checkpos) == False)
+      if(check_pos(checkpos) == False && transf->pos.y > 0)
          transf->pos.y--;
    }
    else if(key == 's'){
       checkpos.y += 1;
-      if(check_pos(checkpos) == False)
+      if(check_pos(checkpos) == False && transf->pos.y < 34)
          transf->pos.y++;
    }
    if(key == 'd'){
       checkpos.x += 1;
-      if(check_pos(checkpos) == False)
+      if(check_pos(checkpos) == False && transf->pos.x < 129)
          transf->pos.x++;
    }
    else if(key == 'a'){
       checkpos.x -= 1;
-      if(check_pos(checkpos) == False)
+      if(check_pos(checkpos) == False && transf->pos.x > 0)
          transf->pos.x--;
    }
 }
