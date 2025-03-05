@@ -7,7 +7,6 @@
 
 static char game_prev[1000] = " ccccccc    cccccc    ccc        cc\ncccccccc    cccccc    cccc       cc\ncc        cc      cc  cc cc      cc\ncc        cc      cc  cc  cc     cc\ncc        cc      cc  cc   cc    cc\ncc        cc      cc  cc    cc   cc\ncc        cc      cc  cc     cc  cc\ncc        cc      cc  cc      cc cc\ncc        cc      cc  cc       cccc\ncccccccc    cccccc    cc        ccc\n ccccccc    cccccc    cc         cc";
 
-
 static short selector = 0;
 static char key = '0';
 static char menu_cursor = '>';

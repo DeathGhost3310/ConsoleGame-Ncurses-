@@ -9,9 +9,10 @@
 typedef struct{
    Component base;
    int hp;
+   void *object;
 }Unit;
 
-Unit* init_unit(int hp);
+Unit* init_unit(int hp, void *obj);
 
 void damage_unit(void *self, int damage);
 

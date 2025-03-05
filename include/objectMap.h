@@ -21,6 +21,8 @@ void set_ObjectsState();
 
 void update_objects();
 
+Object* get_objectbyName(char *name);
+
 void add_object(Object *obj);
 
 void delete_obj(Object *obj);

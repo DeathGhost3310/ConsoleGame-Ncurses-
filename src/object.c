@@ -28,7 +28,7 @@ void update_object(void *self){
    if(obj->Active == False)
       return;
 
-
+   
    for(int i = 0;i < obj->count;i++)
       obj->components[i]->Update(obj->components[i]);
 }

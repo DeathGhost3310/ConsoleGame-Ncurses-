@@ -40,6 +40,19 @@ Bool check_pos(Vector2i pos){
 
 void set_ObjectsState(){}
 
+
+Object* get_objectbyName(char *name){
+   for(unsigned int i = 0;i < count;i++){
+      if(objMap[i] == NULL)
+         continue;
+      if(*objMap[i]->name == *name)
+         return objMap[i];
+   }
+   
+   return NULL;
+}
+
+
 void update_objects(){
    for(unsigned int i = 0;i < count;i++){
       if(objMap[i] != NULL)

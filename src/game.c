@@ -32,7 +32,6 @@ void init_game(){
    add_object(player);
    add_object(obb);
    add_object(obb2);
-
 }
 
 void game_loop(){
@@ -42,12 +41,14 @@ void game_loop(){
    border_draw(130, 35, '|');
    update_interface();
    update_objects();
+   Object *obj = get_objectbyName("player");
    while(gameWork == True){
       UpdateKey();
       key = GetKey();
       if(key == 'e')
          gameWork = False;
-
+      if(key == 'y')
+         delete_obj(obj);
       cls();
       border_draw(130, 35, '|');
       update_interface();
