@@ -13,7 +13,7 @@ Object* init_player(Vector2i pos){
    addComp_object(obj, (Component *)transf);
    addComp_object(obj, (Component *)unitC);
    
-   init_interface(obj, unitC, init_Vector2i(131, 5));
+   init_interface(obj, unitC, init_Vector2i(131, 1));
 
    return obj;
 }

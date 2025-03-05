@@ -85,6 +85,13 @@ void delete_obj(Object *obj){
 }
 
 void destruct_objMap(){
+   for(unsigned int i = 0;i < count;i++){
+      if(objMap[i] != NULL)
+         destruct_object(objMap[i]);
+   }
+   delCount = 0;
+   count = 0;
+   free(deleteObjsKeys);
    free(objMap);
 }
 

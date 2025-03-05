@@ -42,7 +42,7 @@ void menu_loop(){
    Bool menuWork = True;
    
    pos = init_Vector2i(75, 15);
-
+   
    while(menuWork == True){
       cls();
       menu_render();
@@ -56,10 +56,10 @@ void menu_loop(){
          }
          else if(selector == 1){
             menuWork = False;
-            break;
+            goto exit;
          }
       }
    }
-
-   destruct_base();
+   exit:
+      destruct_base();
 }

@@ -1,18 +1,16 @@
 #include "../include/game.h"
 #include "../include/component.h"
 #include "../include/transformComp.h"
-#include "../include/moveComp.h"
-#include "../include/unitComp.h"
 #include "../include/object.h"
 #include "../include/objectMap.h"
 #include "../include/playerObj.h"
+#include "../include/blockFactory.h"
 #include "../include/interface.h"
 
 
 #include "../include/render.h"
 #include "../include/headers.h"
 #include "../include/input.h"
-#include "../include/menu.h"
 
 void init_base(){
    init_render();
@@ -32,6 +30,11 @@ void init_game(){
    add_object(player);
    add_object(obb);
    add_object(obb2);
+   for(int i = 0;i < 10;i++)
+      create_block(init_Vector2i(51 + i, 22), '%', 100);
+   for(int i = 0;i < 10;i++)
+      create_unbreakableBlock(init_Vector2i(51 + i, 20), 'u');
+
 }
 
 void game_loop(){
@@ -55,7 +58,6 @@ void game_loop(){
       update_objects();
    }
    destruct_game();
-   menu_loop();
 }
 
 void destruct_game(){
