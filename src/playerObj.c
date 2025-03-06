@@ -7,7 +7,6 @@ Object* init_player(Vector2i pos){
    Transform *transf = init_transform(pos, '&');
    MoveComp *move = init_move(transf);
    Unit *unitC = init_unit(100, obj);
-   obj->transf = transf;
 
    addComp_object(obj, (Component *)move);
    addComp_object(obj, (Component *)transf);

@@ -10,6 +10,7 @@ Transform* init_transform(Vector2i pos, char sym){
    transf->pos = pos;
    transf->symbol = sym;
    transf->base.Active = True;
+   transf->base.type = transformComp;
 
    return transf;
 }

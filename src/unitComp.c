@@ -8,6 +8,7 @@ Unit* init_unit(int hp, void *obj){
    unit->base.Destruct = destruct_unit;
    unit->base.Active = True;
    unit->object = obj;
+   unit->base.type = unitComp;
 
    return unit;
 }

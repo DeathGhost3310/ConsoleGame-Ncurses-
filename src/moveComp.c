@@ -9,7 +9,8 @@ MoveComp* init_move(Transform *transf){
    moveC->base.Update = update_move;
    moveC->base.Destruct = destruct_move;
    moveC->base.Active = True;
-   
+   moveC->base.type = moveComp;
+
    return moveC;
 }
 

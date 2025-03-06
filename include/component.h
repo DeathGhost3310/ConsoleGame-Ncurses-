@@ -5,12 +5,15 @@
 
 typedef enum {
    comp, 
-   transform
+   transformComp,
+   moveComp,
+   unitComp,
 }CompType;
 
 typedef struct{
    void (*Update)(void *);
    void (*Destruct)(void *);
+   CompType type;
    Bool Active;
 }Component;
 

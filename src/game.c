@@ -1,6 +1,7 @@
 #include "../include/game.h"
 #include "../include/component.h"
 #include "../include/transformComp.h"
+#include "../include/unitComp.h"
 #include "../include/object.h"
 #include "../include/objectMap.h"
 #include "../include/playerObj.h"
@@ -22,8 +23,6 @@ void init_game(){
    Object *obb2 = init_object(1, "wall2");
    Transform *transfWall2 = init_transform(init_Vector2i(33, 33), ')');
    Transform *transfWall = init_transform(init_Vector2i(11, 10), '#');
-   obb->transf = transfWall;
-   obb2->transf = transfWall2;
    addComp_object(obb, (Component *)transfWall);
    addComp_object(obb2, (Component *)transfWall2);
    init_objectMap(1000);
@@ -45,13 +44,16 @@ void game_loop(){
    update_interface();
    update_objects();
    Object *obj = get_objectbyName("player");
+   Unit *unit = (Unit *)get_compByType(obj, unitComp);
    while(gameWork == True){
       UpdateKey();
       key = GetKey();
       if(key == 'e')
          gameWork = False;
-      if(key == 'y')
+      else if(key == 'y')
          delete_obj(obj);
+      else if(key == 'g')
+         damage_unit(unit, 25);
       cls();
       border_draw(130, 35, '|');
       update_interface();

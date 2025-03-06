@@ -20,6 +20,9 @@ void addComp_object(void *self, Component *comp){
       return;
    obj->components[obj->count] = comp;
    
+   if(comp->type == transformComp)
+      obj->transf = (Transform *)comp;
+
    obj->count++;
 }
 
@@ -39,6 +42,15 @@ Transform* get_transform(void *self){
       return obj->transf;
    }
    return obj->transf;
+}
+
+Component* get_compByType(Object *obj, CompType type){
+   for(int i = 0;i < obj->count;i++){
+      if(obj->components[i]->type == type)
+         return obj->components[i];
+   }
+
+   return NULL;
 }
 
 void destruct_object(void *self){

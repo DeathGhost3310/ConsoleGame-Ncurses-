@@ -22,6 +22,8 @@ void addComp_object(void *self, Component *comp);
 
 void update_object(void *self);
 
+Component* get_compByType(Object *obj, CompType type);
+
 Transform* get_transform(void *self);
 
 void destruct_object(void *self);
